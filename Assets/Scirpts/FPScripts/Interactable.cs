@@ -12,7 +12,6 @@ public class Interactable : MonoBehaviour
 
     //用于调取DialogueManger的功能
     public Dialogue dialogue;
-    bool dialogueIsOn = false;
 
     public virtual void Interact()
     {
@@ -24,24 +23,18 @@ public class Interactable : MonoBehaviour
         if (isFocus && !hasInteracted)
         {
             float distance = Vector3.Distance(player.position, interactionTransform.position);
+
             if (distance <= radius)
             {
                 Interact();
                 //找到DialogueManager之后启用对话框
                 FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
-                //正在对话框的同时按F键继续
-                dialogueIsOn = true;
-                if (dialogueIsOn && Input.GetKeyDown(KeyCode.F))
-                {
-                    FindObjectOfType<DialogueManager>().DisplayNextSentence();
-                }
                 hasInteracted = true;
             }
             else
             {
                 Debug.Log("Hard to Reach");
                 hasInteracted = true;
-                dialogueIsOn = false;
             }
         }
     }
