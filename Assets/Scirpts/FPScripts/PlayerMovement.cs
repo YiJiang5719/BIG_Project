@@ -18,18 +18,23 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     Vector3 velocity;
+    //检测是否触碰地面
     bool isGrounded;
+
+    //用于显示提示对话框
+    public Animator animator;
 
     void Start()
     {
         cam = Camera.main;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
+
+        //Basic Movement include Jump & Move
 
         isGrounded = Physics.CheckSphere(groundcheck.position, groundDistance, groundMask);
         if (isGrounded && velocity.y < 0)
@@ -54,26 +59,35 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         //Left Click to interactable
-        if (Input.GetMouseButtonDown(0))
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        if (Physics.Raycast(ray, out hit, 100))
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            if (Physics.Raycast(ray, out hit, 100))
+            if (hit.collider.gameObject.tag == "Items")
             {
+                //显示提示框文字
+                animator.SetBool("IsShowTip", true);
+                if (Input.GetMouseButtonDown(0))
+                {
                 // check if we hit an interactable
                 // if we did set it as our focus
-                Interactable interactable = hit.collider.GetComponent<Interactable>();
-                if (interactable != null)
+                    Interactable interactable = hit.collider.GetComponent<Interactable>();
+                    if (interactable != null)
+                    {
+                        SetFocus(interactable);
+                    }
+                }
+                //Right Click to cancel
+                if (Input.GetMouseButtonDown(1))
                 {
-                    SetFocus(interactable);
+                    RemoveFocus();
                 }
             }
-        }
-        //Right Click to cancel
-        if (Input.GetMouseButtonDown(1))
-        {
-            RemoveFocus();
+            else
+            {
+                //隐藏提示框文字
+                animator.SetBool("IsShowTip", false);
+            }
         }
     }
 
