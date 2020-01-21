@@ -24,9 +24,21 @@ public class EnemyController : MonoBehaviour
         if (distance <= lookRadius)
         {
             agent.SetDestination(target.position);
+
+            if (distance <= agent.stoppingDistance)
+            {
+                // face the target
+                FaceTarget();
+            }
         }
     }
 
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;

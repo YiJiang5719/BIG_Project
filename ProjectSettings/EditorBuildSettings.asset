@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadingBar.unity
     guid: 8f8264291f2654b4ea271c0abde77df0
   - enabled: 1
-    path: Assets/Scenes/Level_1.unity
-    guid: 64bb69b4ffa6541d78d026b67dee1874
-  - enabled: 1
-    path: Assets/Scenes/Level_2.unity
-    guid: 1f808d38a18e14edc9a6bbcad46d96d9
+    path: Assets/Scenes/FPSControllerTest.unity
+    guid: 18dbb0587715c41a4b888509799b22a1
   m_configObjects: {}
