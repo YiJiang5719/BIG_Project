@@ -46,6 +46,12 @@ ModelImporter:
     100080: Tower
     100082: Building_11
     100084: Building_12
+    100086: Building_13
+    100088: Cube.001
+    100090: Cube.002
+    100092: Cube.003
+    100094: Cube.004
+    100096: Plane
     400000: Apartment_1
     400002: Apartment_10
     400004: Apartment_11
@@ -89,7 +95,15 @@ ModelImporter:
     400080: Tower
     400082: Building_11
     400084: Building_12
+    400086: Building_13
+    400088: Cube.001
+    400090: Cube.002
+    400092: Cube.003
+    400094: Cube.004
+    400096: Plane
     2100000: No Name
+    2100002: GreyRoad
+    2100004: YellowStrip
     2300000: Apartment_1
     2300002: Apartment_10
     2300004: Apartment_11
@@ -132,6 +146,12 @@ ModelImporter:
     2300078: Tower
     2300080: Building_11
     2300082: Building_12
+    2300084: Building_13
+    2300086: Cube.001
+    2300088: Cube.002
+    2300090: Cube.003
+    2300092: Cube.004
+    2300094: Plane
     3300000: Apartment_1
     3300002: Apartment_10
     3300004: Apartment_11
@@ -174,6 +194,12 @@ ModelImporter:
     3300078: Tower
     3300080: Building_11
     3300082: Building_12
+    3300084: Building_13
+    3300086: Cube.001
+    3300088: Cube.002
+    3300090: Cube.003
+    3300092: Cube.004
+    3300094: Plane
     4300000: Ground
     4300002: Circle
     4300004: MirrorBuilding_1
@@ -216,8 +242,29 @@ ModelImporter:
     4300078: Human
     4300080: Building_11
     4300082: Building_12
+    4300084: Building_13
+    4300086: Cube.001
+    4300088: Plane
+    4300090: Cube.002
+    4300092: Cube.003
+    4300094: Cube.004
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GreyRoad
+    second: {fileID: 2100000, guid: dab1c3aff7636429688a7a8cba054fb4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: ec94a07bcab86124393f2f0c6f447dd2, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: YellowStrip
+    second: {fileID: 2100000, guid: d692731f325734bf284671e5f66bf128, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

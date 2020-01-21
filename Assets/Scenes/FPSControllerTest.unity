@@ -44,7 +44,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -1839,6 +1839,7 @@ GameObject:
   - component: {fileID: 450216738}
   - component: {fileID: 450216737}
   - component: {fileID: 450216736}
+  - component: {fileID: 450216739}
   m_Layer: 0
   m_Name: AITest
   m_TagString: Untagged
@@ -1926,6 +1927,23 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &450216739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450216733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7de75b14d42a2443a16a0588f4cd1f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 10
+  interactionTransform: {fileID: 450216735}
+  dialogue:
+    name: 
+    sentence: []
 --- !u!1 &459278030
 GameObject:
   m_ObjectHideFlags: 0
